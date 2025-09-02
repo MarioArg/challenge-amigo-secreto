@@ -5,6 +5,10 @@
 let amigos = [];
 
 const teclaAñadir = document.getElementById ("amigo");
+teclaAñadir.addEventListener ("keydown", function (event){
+    if (event.key === "Enter") 
+        agregarAmigo ();
+});
 
 function agregarAmigo () {
     let agregarNombres = document.getElementById ("amigo").value;
@@ -22,7 +26,7 @@ function agregarAmigo () {
     document.getElementById ("amigo").value = ``;
     console.log (amigos)
     listaNombreAmigos();
-}
+};
 
 function listaNombreAmigos () {
     let listaDeAmigos = document.getElementById ("listaAmigos");
